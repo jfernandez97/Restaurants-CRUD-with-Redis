@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @RestController
@@ -16,7 +17,7 @@ public class RestauranteController {
 
 
     @GetMapping
-    public List<Restaurante> getAll(){
+    public List<Restaurante> getAll(HttpSession session){
         return restauranteService.getAll();
     }
     @PostMapping

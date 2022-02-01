@@ -34,8 +34,16 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 	implementation 'redis.clients:jedis'
 
+	implementation 'org.springframework.session:spring-session-data-redis'
+
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+}
+
+dependencyManagement {
+	imports {
+		mavenBom 'org.springframework.session:spring-session-bom:2020.0.3'
+	}
 }
 
 tasks.named('test') {
